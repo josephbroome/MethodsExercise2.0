@@ -6,15 +6,15 @@ class Program
     {
 
 
-        tellAStory();
+        //tellAStory();
 
         Console.WriteLine(Add(5, 6));
         Console.WriteLine(Multiply(7, 8));
         Console.WriteLine(Sum(5,6,7,8));    
-        Console.WriteLine(Multiply(12,4,3));
-        Console.WriteLine(Divide(12,4));
+        Console.WriteLine(Multiply(12,4,2));
+        Console.WriteLine(Divide(12,4,5));
         Console.WriteLine(Division(12,4));
-    
+        Console.WriteLine(Subtract(12,4,10));
     
     }   
 
@@ -60,6 +60,16 @@ class Program
 
         return sum;
     }
+
+    public static int Subtract(params int[] list)
+    {
+        int sum = list[0];
+        for(int i=1; i<list.Length; i++)
+        {
+            sum = sum - (list[i]);
+        }
+        return sum;
+    }
     public static int Division(int x, int y)
     {
         return x / y;
@@ -81,11 +91,11 @@ class Program
     }
    public static double Divide(params double[] list)
     {
-        double divisor =1;
+        double divisor = list[0];
 
-        for(double i=1; i<list.Length; i++)
+        for(int i=1; i<list.Length; i++)
         {
-            list[(int)i] /= divisor;
+            divisor = divisor / list[ i];
         }
 
         return divisor;

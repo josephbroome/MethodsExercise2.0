@@ -6,19 +6,21 @@ class Program
     {
 
 
-        //tellAStory();
+        tellAStory();
 
         Console.WriteLine(Add(5, 6));
         Console.WriteLine(Multiply(7, 8));
-        Console.WriteLine(Sum(5,6,7,8));    
-        Console.WriteLine(Multiply(12,4,2));
-        Console.WriteLine(Divide(12,4,5));
-        Console.WriteLine(Division(12,4));
-        Console.WriteLine(Subtract(12,4,10));
-    
-    }   
+        Console.WriteLine(Sum(5, 6, 7, 8));
+        Console.WriteLine(Multiply(12, 4, 2));
+        Console.WriteLine(Divide(12, 4, 5));
+        Console.WriteLine(Division(12, 4));
+        Console.WriteLine(Subtract(12, 4, 10));
 
-   public static void tellAStory()
+        Console.WriteLine(Remainder(12, 5));
+
+    }
+
+    public static void tellAStory()
     {
         Console.WriteLine("Hello, what is your name");
         var name=Console.ReadLine();
@@ -39,6 +41,18 @@ class Program
 
     }
 
+    public static double Remainder(params double []list)
+    {
+        double remainder=list[0];
+        for(int i=1;i<list.Length;i++)
+        {
+            remainder %= list[i];
+        }
+
+        return remainder;
+
+
+    }
     public static int Add(int x, int y)
     {
         return x+ y;    
